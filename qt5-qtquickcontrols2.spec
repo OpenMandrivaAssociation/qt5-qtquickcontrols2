@@ -5,7 +5,7 @@
 %define _qt5_prefix %{_libdir}/qt%{api}
 
 Name:		qt5-qtquickcontrols2
-Version:	5.6.0
+Version:	5.6.1
 %if "%{beta}" != ""
 Release:	0.%{beta}.1
 %define qttarballdir qtquickcontrols2-opensource-src-%{version}-%{beta}
@@ -15,6 +15,7 @@ Release:	1
 %define qttarballdir qtquickcontrols2-opensource-src-%{version}
 Source0:	http://download.qt.io/official_releases/qt/%(echo %{version}|cut -d. -f1-2)/%{version}/submodules/%{qttarballdir}.tar.xz
 %endif
+Source100:	%{name}.rpmlintrc
 Summary:	Qt GUI toolkit
 Group:		Development/KDE and Qt
 License:	LGPLv2 with exceptions or GPLv3 with exceptions and GFDL
@@ -31,10 +32,21 @@ Qt Quick Controls.
 
 %files
 %{_qt5_prefix}/qml/Qt/labs
-%{_qt5_prefix}/examples/qtlabscontrols
 
 %libpackage Qt5LabsTemplates 5
 
+#------------------------------------------------------------------------------
+%package examples
+Summary: Examples for %{name}
+Group: Development/KDE and Qt
+
+%description examples
+Examples for %{name}
+
+%files examples
+%{_qt5_prefix}/examples/*
+
+#------------------------------------------------------------------------------
 %define devname %mklibname -d Qt5LabsTemplates
 
 %package -n %{devname}
