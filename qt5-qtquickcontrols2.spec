@@ -5,7 +5,7 @@
 %define _qt5_prefix %{_libdir}/qt%{api}
 
 Name:		qt5-qtquickcontrols2
-Version:	5.6.1
+Version:	5.7.0
 %if "%{beta}" != ""
 Release:	0.%{beta}.1
 %define qttarballdir qtquickcontrols2-opensource-src-%{version}-%{beta}
@@ -31,9 +31,11 @@ BuildRequires:	qt5-qtquick-private-devel = %{version}
 Qt Quick Controls.
 
 %files
-%{_qt5_prefix}/qml/Qt/labs
+%{_qt5_prefix}/qml/QtQuick/*
+%{_qt5_prefix}/qml/Qt/labs/calendar
 
-%libpackage Qt5LabsTemplates 5
+%libpackage Qt5QuickControls2 5
+%libpackage Qt5QuickTemplates2 5
 
 #------------------------------------------------------------------------------
 %package examples
@@ -47,24 +49,28 @@ Examples for %{name}
 %{_qt5_prefix}/examples/*
 
 #------------------------------------------------------------------------------
-%define devname %mklibname -d Qt5LabsTemplates
+%define devname %mklibname -d Qt5QuickControls2
 
 %package -n %{devname}
 Summary: Development files for %{name}
 Group: Development/KDE and Qt
 Requires: %{name} = %{EVRD}
+Obsoletes: %{mklibname -d Qt5LabTemplates} < %{EVRD}
 
 %description -n %{devname}
 Development files for %{name}
 
 %files -n %{devname}
-%{_includedir}/qt5/QtLabsControls
-%{_includedir}/qt5/QtLabsTemplates
-%{_libdir}/libQt5LabsTemplates.so
-%{_libdir}/libQt5LabsTemplates.prl
-%{_libdir}/libQt5LabsControls.a
-%{_libdir}/libQt5LabsControls.prl
+%{_includedir}/qt5/QtQuickControls2
+%{_includedir}/qt5/QtQuickTemplates2
+%{_libdir}/libQt5QuickTemplates2.so
+%{_libdir}/libQt5QuickTemplates2.prl
+%{_libdir}/libQt5QuickControls2.so
+%{_libdir}/libQt5QuickControls2.prl
+%{_qt5_prefix}/mkspecs/modules/qt_lib_quickcontrols2.pri
 %{_qt5_prefix}/mkspecs/modules/qt_lib_*_private.pri
+%{_libdir}/pkgconfig/Qt5QuickControls2.pc
+%{_libdir}/cmake/Qt5QuickControls2
 
 #------------------------------------------------------------------------------
 
