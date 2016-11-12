@@ -1,11 +1,11 @@
 %define api %(echo %{version} |cut -d. -f1)
 %define major %api
-%define beta %nil
+%define beta beta
 
 %define _qt5_prefix %{_libdir}/qt%{api}
 
 Name:		qt5-qtquickcontrols2
-Version:	5.7.0
+Version:	5.8.0
 %if "%{beta}" != ""
 Release:	0.%{beta}.1
 %define qttarballdir qtquickcontrols2-opensource-src-%{version}-%{beta}
@@ -33,6 +33,7 @@ Qt Quick Controls.
 %files
 %{_qt5_prefix}/qml/QtQuick/*
 %{_qt5_prefix}/qml/Qt/labs/calendar
+%{_qt5_prefix}/qml/Qt/labs/platform
 
 %libpackage Qt5QuickControls2 5
 %libpackage Qt5QuickTemplates2 5
