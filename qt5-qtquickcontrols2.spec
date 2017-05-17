@@ -1,6 +1,6 @@
 %define api %(echo %{version} |cut -d. -f1)
 %define major %api
-%define beta beta
+%define beta beta4
 
 %define _qt5_prefix %{_libdir}/qt%{api}
 
@@ -26,6 +26,11 @@ BuildRequires:	pkgconfig(Qt5Quick) = %{version}
 BuildRequires:	pkgconfig(Qt5Widgets) = %{version}
 BuildRequires:	pkgconfig(Qt5Sql) = %{version}
 BuildRequires:	qt5-qtquick-private-devel = %{version}
+# FIXME if there's an installed version, some tools in the
+# qtquickcontrols2 tree try to link against it, causing
+# symbol mismatches when internal APIs or ABIs changed.
+BuildConflicts:	%{name}
+BuildConflicts: %{devname}
 
 %description
 Qt Quick Controls.
