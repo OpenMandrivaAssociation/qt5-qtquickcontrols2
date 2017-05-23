@@ -1,6 +1,7 @@
 %define api %(echo %{version} |cut -d. -f1)
 %define major %api
 %define beta beta4
+%define devname %mklibname -d Qt5QuickControls2
 
 %define _qt5_prefix %{_libdir}/qt%{api}
 
@@ -55,8 +56,6 @@ Examples for %{name}
 %{_qt5_prefix}/examples/*
 
 #------------------------------------------------------------------------------
-%define devname %mklibname -d Qt5QuickControls2
-
 %package -n %{devname}
 Summary: Development files for %{name}
 Group: Development/KDE and Qt
