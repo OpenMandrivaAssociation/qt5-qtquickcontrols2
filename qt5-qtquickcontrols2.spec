@@ -32,6 +32,8 @@ BuildRequires:	qt5-qtquick-private-devel = %{version}
 # symbol mismatches when internal APIs or ABIs changed.
 BuildConflicts:	%{name}
 BuildConflicts: %{devname}
+# For the Provides: generator
+BuildRequires:	cmake >= 3.11.0-1
 
 %description
 Qt Quick Controls.
