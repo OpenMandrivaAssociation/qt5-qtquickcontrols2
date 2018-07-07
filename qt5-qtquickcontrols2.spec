@@ -1,11 +1,12 @@
 %define api %(echo %{version} |cut -d. -f1)
 %define major %api
 %define beta %{nil}
+%define devname %mklibname -d Qt5QuickControls2
 
 %define _qt5_prefix %{_libdir}/qt%{api}
 
 Name:		qt5-qtquickcontrols2
-Version:	5.8.0
+Version:	5.9.2
 %if "%{beta}" != ""
 Release:	0.%{beta}.1
 %define qttarballdir qtquickcontrols2-opensource-src-%{version}-%{beta}
@@ -26,6 +27,11 @@ BuildRequires:	pkgconfig(Qt5Quick) = %{version}
 BuildRequires:	pkgconfig(Qt5Widgets) = %{version}
 BuildRequires:	pkgconfig(Qt5Sql) = %{version}
 BuildRequires:	qt5-qtquick-private-devel = %{version}
+# FIXME if there's an installed version, some tools in the
+# qtquickcontrols2 tree try to link against it, causing
+# symbol mismatches when internal APIs or ABIs changed.
+BuildConflicts:	%{name}
+BuildConflicts: %{devname}
 
 %description
 Qt Quick Controls.
@@ -50,8 +56,6 @@ Examples for %{name}
 %{_qt5_prefix}/examples/*
 
 #------------------------------------------------------------------------------
-%define devname %mklibname -d Qt5QuickControls2
-
 %package -n %{devname}
 Summary: Development files for %{name}
 Group: Development/KDE and Qt
