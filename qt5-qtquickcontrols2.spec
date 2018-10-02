@@ -31,7 +31,7 @@ BuildRequires:	qt5-qtquick-private-devel = %{version}
 # qtquickcontrols2 tree try to link against it, causing
 # symbol mismatches when internal APIs or ABIs changed.
 BuildConflicts:	%{name}
-BuildConflicts: %{devname}
+BuildConflicts:	%{devname}
 # For the Provides: generator
 BuildRequires:	cmake >= 3.11.0-1
 
@@ -52,7 +52,7 @@ Summary: Examples for %{name}
 Group: Development/KDE and Qt
 
 %description examples
-Examples for %{name}
+Examples for %{name}.
 
 %files examples
 %{_qt5_prefix}/examples/*
@@ -65,7 +65,7 @@ Requires: %{name} = %{EVRD}
 Obsoletes: %{mklibname -d Qt5LabTemplates} < %{EVRD}
 
 %description -n %{devname}
-Development files for %{name}
+Development files for %{name}.
 
 %files -n %{devname}
 %{_includedir}/qt5/QtQuickControls2
@@ -82,13 +82,13 @@ Development files for %{name}
 #------------------------------------------------------------------------------
 
 %prep
-%setup -q -n %qttarballdir
+%autosetup -n %qttarballdir -p1
 
 %build
 %qmake_qt5
-%make
+%make_build
 
 #------------------------------------------------------------------------------
 
 %install
-%makeinstall_std INSTALL_ROOT=%{buildroot}
+%make_install INSTALL_ROOT=%{buildroot}
