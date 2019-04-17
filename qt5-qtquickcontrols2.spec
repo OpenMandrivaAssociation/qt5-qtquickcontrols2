@@ -6,7 +6,7 @@
 %define _qt5_prefix %{_libdir}/qt%{api}
 
 Name:		qt5-qtquickcontrols2
-Version:	5.12.2
+Version:	5.12.3
 %if "%{beta}" != ""
 Release:	0.%{beta}.1
 %define qttarballdir qtquickcontrols2-everywhere-src-%{version}-%{beta}
@@ -75,9 +75,12 @@ Development files for %{name}.
 %{_libdir}/libQt5QuickControls2.so
 %{_libdir}/libQt5QuickControls2.prl
 %{_qt5_prefix}/mkspecs/modules/qt_lib_quickcontrols2.pri
+%{_qt5_prefix}/mkspecs/modules/qt_lib_quicktemplates2.pri
 %{_qt5_prefix}/mkspecs/modules/qt_lib_*_private.pri
 %{_libdir}/pkgconfig/Qt5QuickControls2.pc
+%{_libdir}/pkgconfig/Qt5QuickTemplates2.pc
 %{_libdir}/cmake/Qt5QuickControls2
+%{_libdir}/cmake/Qt5QuickTemplates2
 
 #------------------------------------------------------------------------------
 
