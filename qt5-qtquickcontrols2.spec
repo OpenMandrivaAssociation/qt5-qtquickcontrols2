@@ -1,6 +1,6 @@
 %define api %(echo %{version} |cut -d. -f1)
 %define major %api
-%define beta rc3
+%define beta %{nil}
 %define devname %mklibname -d Qt5QuickControls2
 
 %define _qt5_prefix %{_libdir}/qt%{api}
