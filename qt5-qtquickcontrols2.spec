@@ -27,6 +27,7 @@ BuildRequires:	pkgconfig(Qt5Quick) = %{version}
 BuildRequires:	pkgconfig(Qt5Widgets) = %{version}
 BuildRequires:	pkgconfig(Qt5Sql) = %{version}
 BuildRequires:	qt5-qtquick-private-devel = %{version}
+BuildRequires:	qt5-qtqmlmodels-private-devel
 # FIXME if there's an installed version, some tools in the
 # qtquickcontrols2 tree try to link against it, causing
 # symbol mismatches when internal APIs or ABIs changed.
