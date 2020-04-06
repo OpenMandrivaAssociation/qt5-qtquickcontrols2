@@ -1,0 +1,12 @@
+diff -up qtquickcontrols2-everywhere-src-5.15.0-beta3/src/quicktemplates2/qquickheaderview.cpp.omv~ qtquickcontrols2-everywhere-src-5.15.0-beta3/src/quicktemplates2/qquickheaderview.cpp
+--- qtquickcontrols2-everywhere-src-5.15.0-beta3/src/quicktemplates2/qquickheaderview.cpp.omv~	2020-04-06 14:43:15.150651837 +0200
++++ qtquickcontrols2-everywhere-src-5.15.0-beta3/src/quicktemplates2/qquickheaderview.cpp	2020-04-06 14:43:55.810903457 +0200
+@@ -250,7 +250,7 @@ void QQuickHeaderViewBasePrivate::syncMo
+ 
+     QQuickTableViewPrivate::syncModel();
+ 
+-    isTransposed = false;
++    bool isTransposed = false;
+     const auto aim = model->abstractItemModel();
+     if (orientation() == Qt::Horizontal) {
+         // For models that are just a list or a number, and especially not a
