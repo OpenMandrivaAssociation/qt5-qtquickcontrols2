@@ -1,0 +1,32 @@
+From 65194cf47a809f1694237e5163e3704b720d87cb Mon Sep 17 00:00:00 2001
+From: Mitch Curtis <mitch.curtis@qt.io>
+Date: Thu, 5 Nov 2020 11:38:42 +0100
+Subject: [PATCH 3/7] Doc: fix SplitView's inheritance
+
+It inherits Container.
+
+Fixes: QTBUG-88184
+Change-Id: Ic4878c2b240dad2294569a48c4f39e82d377133a
+Reviewed-by: Fabian Kosmale <fabian.kosmale@qt.io>
+(cherry picked from commit c357974b4e1a3400d8036039c15dddac3b863046)
+Reviewed-by: Qt Cherry-pick Bot <cherrypick_bot@qt-project.org>
+---
+ src/quicktemplates2/qquicksplitview.cpp | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/src/quicktemplates2/qquicksplitview.cpp b/src/quicktemplates2/qquicksplitview.cpp
+index a3566c56..a06c8d31 100644
+--- a/src/quicktemplates2/qquicksplitview.cpp
++++ b/src/quicktemplates2/qquicksplitview.cpp
+@@ -49,7 +49,7 @@ QT_BEGIN_NAMESPACE
+ 
+ /*!
+     \qmltype SplitView
+-    \inherits Control
++    \inherits Container
+ //!     \instantiates QQuickSplitView
+     \inqmlmodule QtQuick.Controls
+     \since 5.13
+-- 
+2.31.1
+

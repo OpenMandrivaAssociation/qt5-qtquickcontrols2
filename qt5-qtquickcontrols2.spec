@@ -6,18 +6,25 @@
 %define _qt5_prefix %{_libdir}/qt%{api}
 
 Name:		qt5-qtquickcontrols2
-Version:	5.15.2
+Version:	5.15.3
 %if "%{beta}" != ""
 Release:	0.%{beta}.1
 %define qttarballdir qtquickcontrols2-everywhere-src-%{version}-%{beta}
 Source0:	http://download.qt.io/development_releases/qt/%(echo %{version}|cut -d. -f1-2)/%{version}-%{beta}/submodules/%{qttarballdir}.tar.xz
 %else
 Release:	1
-%define qttarballdir qtquickcontrols2-everywhere-src-%{version}
-Source0:	http://download.qt.io/official_releases/qt/%(echo %{version}|cut -d. -f1-2)/%{version}/submodules/%{qttarballdir}.tar.xz
+%define qttarballdir qtquickcontrols2-everywhere-src-5.15.2
+Source0:	http://download.qt.io/official_releases/qt/%(echo %{version}|cut -d. -f1-2)/5.15.2/submodules/%{qttarballdir}.tar.xz
 %endif
 Source100:	%{name}.rpmlintrc
 Patch0:		qtquickcontrols2-beta3-compile.patch
+# From KDE
+Patch1000:	0001-Bump-version.patch
+Patch1002:	0003-Doc-fix-SplitView-s-inheritance.patch
+Patch1003:	0004-Fix-QQuickHeaderView-models-to-pass-model-tester.patch
+Patch1004:	0005-Doc-fix-Qt-Labs-Platform-Menu-icon-documentation.patch
+Patch1005:	0006-Doc-remove-all-instances-of-qmlpropertygroup.patch
+Patch1006:	0007-QmlDesigner-Remove-duplicate-of-repeat.patch
 Summary:	Qt GUI toolkit
 Group:		Development/KDE and Qt
 License:	LGPLv2 with exceptions or GPLv3 with exceptions and GFDL
@@ -88,6 +95,7 @@ Development files for %{name}.
 
 %prep
 %autosetup -n %qttarballdir -p1
+%{_qt5_prefix}/bin/syncqt.pl -version %{version}
 
 %build
 %qmake_qt5

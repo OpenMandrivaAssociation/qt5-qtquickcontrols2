@@ -1,0 +1,37 @@
+From eb819a15c8636b84bcb7e51a174a3a02ebe05f85 Mon Sep 17 00:00:00 2001
+From: Mitch Curtis <mitch.curtis@qt.io>
+Date: Fri, 6 Nov 2020 10:43:49 +0100
+Subject: [PATCH 5/7] Doc: fix Qt Labs Platform Menu icon documentation
+
+It was probably copy-pasted from MenuItem.
+
+Change-Id: I20f7e107252346f52bf8c061fe18e1ca6a0bf150
+Reviewed-by: Venugopal Shivashankar <Venugopal.Shivashankar@qt.io>
+(cherry picked from commit 7174714f77fd803bb7b79dea3dda046acc7d1dee)
+Reviewed-by: Qt Cherry-pick Bot <cherrypick_bot@qt-project.org>
+---
+ src/imports/platform/qquickplatformmenu.cpp | 8 ++++----
+ 1 file changed, 4 insertions(+), 4 deletions(-)
+
+diff --git a/src/imports/platform/qquickplatformmenu.cpp b/src/imports/platform/qquickplatformmenu.cpp
+index 1f5f52d7..f2869662 100644
+--- a/src/imports/platform/qquickplatformmenu.cpp
++++ b/src/imports/platform/qquickplatformmenu.cpp
+@@ -610,10 +610,10 @@ void QQuickPlatformMenu::setFont(const QFont& font)
+ 
+ /*!
+     \since Qt.labs.platform 1.1 (Qt 5.12)
+-    \qmlpropertygroup Qt.labs.platform::MenuItem::icon
+-    \qmlproperty url Qt.labs.platform::MenuItem::icon.source
+-    \qmlproperty string Qt.labs.platform::MenuItem::icon.name
+-    \qmlproperty bool Qt.labs.platform::MenuItem::icon.mask
++    \qmlpropertygroup Qt.labs.platform::Menu::icon
++    \qmlproperty url Qt.labs.platform::Menu::icon.source
++    \qmlproperty string Qt.labs.platform::Menu::icon.name
++    \qmlproperty bool Qt.labs.platform::Menu::icon.mask
+ 
+     This property holds the menu item's icon.
+ */
+-- 
+2.31.1
+

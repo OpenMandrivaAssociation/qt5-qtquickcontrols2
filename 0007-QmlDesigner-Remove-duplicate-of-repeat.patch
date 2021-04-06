@@ -1,0 +1,59 @@
+From a2593ff9cf5d0af885c20c2e9f9faa6ca4f1c1a3 Mon Sep 17 00:00:00 2001
+From: Thomas Hartmann <thomas.hartmann@qt.io>
+Date: Tue, 10 Nov 2020 12:00:44 +0100
+Subject: [PATCH 7/7] QmlDesigner: Remove duplicate of repeat
+
+The autoRepeat property is already part of AbstractButton.
+I renamed "Repeat" to "Auto Repeat"
+
+Change-Id: I4f22ebc18a2094e67c8f48263f84ab9eb7d497b6
+Reviewed-by: Mitch Curtis <mitch.curtis@qt.io>
+Reviewed-by: Leena Miettinen <riitta-leena.miettinen@qt.io>
+(cherry picked from commit abb8f124e11ab056be6dc0221d7fdae485febd04)
+Reviewed-by: Qt Cherry-pick Bot <cherrypick_bot@qt-project.org>
+---
+ .../controls/designer/AbstractButtonSection.qml      |  4 ++--
+ src/imports/controls/designer/ButtonSection.qml      | 12 +-----------
+ 2 files changed, 3 insertions(+), 13 deletions(-)
+
+diff --git a/src/imports/controls/designer/AbstractButtonSection.qml b/src/imports/controls/designer/AbstractButtonSection.qml
+index e8aa39c2..35fad2ab 100644
+--- a/src/imports/controls/designer/AbstractButtonSection.qml
++++ b/src/imports/controls/designer/AbstractButtonSection.qml
+@@ -104,8 +104,8 @@ Section {
+         }
+ 
+         Label {
+-            text: qsTr("Repeat")
+-            tooltip: qsTr("Whether the button repeats while pressed and held down.")
++            text: qsTr("Auto-Repeat")
++            tooltip: qsTr("Whether the button repeats pressed(), released() and clicked() signals while the button is pressed and held down.")
+         }
+         SecondColumnLayout {
+             CheckBox {
+diff --git a/src/imports/controls/designer/ButtonSection.qml b/src/imports/controls/designer/ButtonSection.qml
+index fef46071..951c8cf4 100644
+--- a/src/imports/controls/designer/ButtonSection.qml
++++ b/src/imports/controls/designer/ButtonSection.qml
+@@ -43,17 +43,7 @@ Section {
+     caption: qsTr("Button")
+ 
+     SectionLayout {
+-        Label {
+-            text: qsTr("AutoRepeat")
+-            tooltip: qsTr("Whether the button repeats pressed(), released() and clicked() signals while the button is pressed and held down.")
+-        }
+-        SecondColumnLayout {
+-            CheckBox {
+-                text: backendValues.autoRepeat.valueToString
+-                backendValue: backendValues.autoRepeat
+-                Layout.fillWidth: true
+-            }
+-        }
++
+         Label {
+             text: qsTr("Flat")
+             tooltip: qsTr("Whether the button is flat.")
+-- 
+2.31.1
+

@@ -1,0 +1,163 @@
+From c4242c05d0bc1a833487214497df93382293bc36 Mon Sep 17 00:00:00 2001
+From: Mitch Curtis <mitch.curtis@qt.io>
+Date: Fri, 6 Nov 2020 10:45:58 +0100
+Subject: [PATCH 6/7] Doc: remove all instances of \qmlpropertygroup
+
+This is apparently no longer necessary.
+
+Change-Id: I0f45a84ced5118d248ffab4e745c4e2f2ce5738f
+Reviewed-by: Paul Wicking <paul.wicking@qt.io>
+(cherry picked from commit 08477f64d8b1a7161ad884551c84cffab0e7d5be)
+Reviewed-by: Qt Cherry-pick Bot <cherrypick_bot@qt-project.org>
+---
+ src/imports/platform/qquickplatformfiledialog.cpp     | 1 -
+ src/imports/platform/qquickplatformmenu.cpp           | 1 -
+ src/imports/platform/qquickplatformmenuitem.cpp       | 1 -
+ src/imports/platform/qquickplatformsystemtrayicon.cpp | 1 -
+ src/quicktemplates2/qquickabstractbutton.cpp          | 1 -
+ src/quicktemplates2/qquickaction.cpp                  | 1 -
+ src/quicktemplates2/qquickpopup.cpp                   | 1 -
+ src/quicktemplates2/qquickrangeslider.cpp             | 2 --
+ src/quicktemplates2/qquickspinbox.cpp                 | 2 --
+ src/quicktemplates2/qquickswipedelegate.cpp           | 1 -
+ 10 files changed, 12 deletions(-)
+
+diff --git a/src/imports/platform/qquickplatformfiledialog.cpp b/src/imports/platform/qquickplatformfiledialog.cpp
+index 2ef08ef6..81b851a5 100644
+--- a/src/imports/platform/qquickplatformfiledialog.cpp
++++ b/src/imports/platform/qquickplatformfiledialog.cpp
+@@ -353,7 +353,6 @@ void QQuickPlatformFileDialog::resetNameFilters()
+ }
+ 
+ /*!
+-    \qmlpropertygroup Qt.labs.platform::FileDialog::selectedNameFilter
+     \qmlproperty int Qt.labs.platform::FileDialog::selectedNameFilter.index
+     \qmlproperty string Qt.labs.platform::FileDialog::selectedNameFilter.name
+     \qmlproperty list<string> Qt.labs.platform::FileDialog::selectedNameFilter.extensions
+diff --git a/src/imports/platform/qquickplatformmenu.cpp b/src/imports/platform/qquickplatformmenu.cpp
+index f2869662..b5289f33 100644
+--- a/src/imports/platform/qquickplatformmenu.cpp
++++ b/src/imports/platform/qquickplatformmenu.cpp
+@@ -610,7 +610,6 @@ void QQuickPlatformMenu::setFont(const QFont& font)
+ 
+ /*!
+     \since Qt.labs.platform 1.1 (Qt 5.12)
+-    \qmlpropertygroup Qt.labs.platform::Menu::icon
+     \qmlproperty url Qt.labs.platform::Menu::icon.source
+     \qmlproperty string Qt.labs.platform::Menu::icon.name
+     \qmlproperty bool Qt.labs.platform::Menu::icon.mask
+diff --git a/src/imports/platform/qquickplatformmenuitem.cpp b/src/imports/platform/qquickplatformmenuitem.cpp
+index 72ad7d5d..5a8b3798 100644
+--- a/src/imports/platform/qquickplatformmenuitem.cpp
++++ b/src/imports/platform/qquickplatformmenuitem.cpp
+@@ -592,7 +592,6 @@ void QQuickPlatformMenuItem::setFont(const QFont& font)
+ 
+ /*!
+     \since Qt.labs.platform 1.1 (Qt 5.12)
+-    \qmlpropertygroup Qt.labs.platform::MenuItem::icon
+     \qmlproperty url Qt.labs.platform::MenuItem::icon.source
+     \qmlproperty string Qt.labs.platform::MenuItem::icon.name
+     \qmlproperty bool Qt.labs.platform::MenuItem::icon.mask
+diff --git a/src/imports/platform/qquickplatformsystemtrayicon.cpp b/src/imports/platform/qquickplatformsystemtrayicon.cpp
+index da483822..442da037 100644
+--- a/src/imports/platform/qquickplatformsystemtrayicon.cpp
++++ b/src/imports/platform/qquickplatformsystemtrayicon.cpp
+@@ -356,7 +356,6 @@ QRect QQuickPlatformSystemTrayIcon::geometry() const
+ 
+ /*!
+     \since Qt.labs.platform 1.1 (Qt 5.12)
+-    \qmlpropertygroup Qt.labs.platform::SystemTrayIcon::icon
+     \qmlproperty url Qt.labs.platform::SystemTrayIcon::icon.source
+     \qmlproperty string Qt.labs.platform::SystemTrayIcon::icon.name
+     \qmlproperty bool Qt.labs.platform::SystemTrayIcon::icon.mask
+diff --git a/src/quicktemplates2/qquickabstractbutton.cpp b/src/quicktemplates2/qquickabstractbutton.cpp
+index fc37b6f6..950e4e09 100644
+--- a/src/quicktemplates2/qquickabstractbutton.cpp
++++ b/src/quicktemplates2/qquickabstractbutton.cpp
+@@ -736,7 +736,6 @@ void QQuickAbstractButton::setIndicator(QQuickItem *indicator)
+ }
+ 
+ /*!
+-    \qmlpropertygroup QtQuick.Controls::AbstractButton::icon
+     \qmlproperty string QtQuick.Controls::AbstractButton::icon.name
+     \qmlproperty url QtQuick.Controls::AbstractButton::icon.source
+     \qmlproperty int QtQuick.Controls::AbstractButton::icon.width
+diff --git a/src/quicktemplates2/qquickaction.cpp b/src/quicktemplates2/qquickaction.cpp
+index 0dab3b97..2041e774 100644
+--- a/src/quicktemplates2/qquickaction.cpp
++++ b/src/quicktemplates2/qquickaction.cpp
+@@ -381,7 +381,6 @@ void QQuickAction::setText(const QString &text)
+ }
+ 
+ /*!
+-    \qmlpropertygroup QtQuick.Controls::Action::icon
+     \qmlproperty string QtQuick.Controls::Action::icon.name
+     \qmlproperty url QtQuick.Controls::Action::icon.source
+     \qmlproperty int QtQuick.Controls::Action::icon.width
+diff --git a/src/quicktemplates2/qquickpopup.cpp b/src/quicktemplates2/qquickpopup.cpp
+index 1a7731f4..7130d2ea 100644
+--- a/src/quicktemplates2/qquickpopup.cpp
++++ b/src/quicktemplates2/qquickpopup.cpp
+@@ -575,7 +575,6 @@ void QQuickPopupPrivate::setBottomMargin(qreal value, bool reset)
+ 
+ /*!
+     \since QtQuick.Controls 2.5 (Qt 5.12)
+-    \qmlpropertygroup QtQuick.Controls::Popup::anchors
+     \qmlproperty Object QtQuick.Controls::Popup::anchors.centerIn
+ 
+     Anchors provide a way to position an item by specifying its
+diff --git a/src/quicktemplates2/qquickrangeslider.cpp b/src/quicktemplates2/qquickrangeslider.cpp
+index 3702c971..eb9c1bb1 100644
+--- a/src/quicktemplates2/qquickrangeslider.cpp
++++ b/src/quicktemplates2/qquickrangeslider.cpp
+@@ -746,7 +746,6 @@ qreal QQuickRangeSlider::valueAt(qreal position) const
+ }
+ 
+ /*!
+-    \qmlpropertygroup QtQuick.Controls::RangeSlider::first
+     \qmlproperty real QtQuick.Controls::RangeSlider::first.value
+     \qmlproperty real QtQuick.Controls::RangeSlider::first.position
+     \qmlproperty real QtQuick.Controls::RangeSlider::first.visualPosition
+@@ -825,7 +824,6 @@ QQuickRangeSliderNode *QQuickRangeSlider::first() const
+ */
+ 
+ /*!
+-    \qmlpropertygroup QtQuick.Controls::RangeSlider::second
+     \qmlproperty real QtQuick.Controls::RangeSlider::second.value
+     \qmlproperty real QtQuick.Controls::RangeSlider::second.position
+     \qmlproperty real QtQuick.Controls::RangeSlider::second.visualPosition
+diff --git a/src/quicktemplates2/qquickspinbox.cpp b/src/quicktemplates2/qquickspinbox.cpp
+index f04ceff8..a3a73472 100644
+--- a/src/quicktemplates2/qquickspinbox.cpp
++++ b/src/quicktemplates2/qquickspinbox.cpp
+@@ -726,7 +726,6 @@ void QQuickSpinBox::setValueFromText(const QJSValue &callback)
+ }
+ 
+ /*!
+-    \qmlpropertygroup QtQuick.Controls::SpinBox::up
+     \qmlproperty bool QtQuick.Controls::SpinBox::up.pressed
+     \qmlproperty Item QtQuick.Controls::SpinBox::up.indicator
+     \qmlproperty bool QtQuick.Controls::SpinBox::up.hovered
+@@ -747,7 +746,6 @@ QQuickSpinButton *QQuickSpinBox::up() const
+ }
+ 
+ /*!
+-    \qmlpropertygroup QtQuick.Controls::SpinBox::down
+     \qmlproperty bool QtQuick.Controls::SpinBox::down.pressed
+     \qmlproperty Item QtQuick.Controls::SpinBox::down.indicator
+     \qmlproperty bool QtQuick.Controls::SpinBox::down.hovered
+diff --git a/src/quicktemplates2/qquickswipedelegate.cpp b/src/quicktemplates2/qquickswipedelegate.cpp
+index c6214243..018768a2 100644
+--- a/src/quicktemplates2/qquickswipedelegate.cpp
++++ b/src/quicktemplates2/qquickswipedelegate.cpp
+@@ -1025,7 +1025,6 @@ QQuickSwipeDelegate::QQuickSwipeDelegate(QQuickItem *parent)
+ */
+ 
+ /*!
+-    \qmlpropertygroup QtQuick.Controls::SwipeDelegate::swipe
+     \qmlproperty real QtQuick.Controls::SwipeDelegate::swipe.position
+     \qmlproperty bool QtQuick.Controls::SwipeDelegate::swipe.complete
+     \qmlproperty bool QtQuick.Controls::SwipeDelegate::swipe.enabled
+-- 
+2.31.1
+

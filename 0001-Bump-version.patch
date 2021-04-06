@@ -1,0 +1,23 @@
+From 2e32d0975eb058c2076597c03b07c67b7ce9027f Mon Sep 17 00:00:00 2001
+From: Jani Heikkinen <jani.heikkinen@qt.io>
+Date: Tue, 27 Oct 2020 07:49:32 +0200
+Subject: [PATCH 1/7] Bump version
+
+Change-Id: I00ff69d1b2b36efd64ba21d8cf89b2caad71ff33
+---
+ .qmake.conf | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/.qmake.conf b/.qmake.conf
+index 4d40e427..25b262d6 100644
+--- a/.qmake.conf
++++ b/.qmake.conf
+@@ -5,4 +5,4 @@ DEFINES += QT_NO_FOREACH QT_NO_JAVA_STYLE_ITERATORS QT_NO_LINKED_LIST
+ 
+ QQC2_SOURCE_TREE = $$PWD
+ 
+-MODULE_VERSION = 5.15.2
++MODULE_VERSION = 5.15.3
+-- 
+2.31.1
+
