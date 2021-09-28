@@ -5,14 +5,18 @@
 
 %define _qt5_prefix %{_libdir}/qt%{api}
 
+Summary:	Qt GUI toolkit
 Name:		qt5-qtquickcontrols2
+Group:		Development/KDE and Qt
+License:	LGPLv2 with exceptions or GPLv3 with exceptions and GFDL
+URL:		http://www.qt.io
 Version:	5.15.3
 %if "%{beta}" != ""
 Release:	0.%{beta}.1
 %define qttarballdir qtquickcontrols2-everywhere-src-%{version}-%{beta}
 Source0:	http://download.qt.io/development_releases/qt/%(echo %{version}|cut -d. -f1-2)/%{version}-%{beta}/submodules/%{qttarballdir}.tar.xz
 %else
-Release:	1
+Release:	2
 %define qttarballdir qtquickcontrols2-everywhere-src-5.15.2
 Source0:	http://download.qt.io/official_releases/qt/%(echo %{version}|cut -d. -f1-2)/5.15.2/submodules/%{qttarballdir}.tar.xz
 %endif
@@ -25,10 +29,7 @@ Patch1003:	0004-Fix-QQuickHeaderView-models-to-pass-model-tester.patch
 Patch1004:	0005-Doc-fix-Qt-Labs-Platform-Menu-icon-documentation.patch
 Patch1005:	0006-Doc-remove-all-instances-of-qmlpropertygroup.patch
 Patch1006:	0007-QmlDesigner-Remove-duplicate-of-repeat.patch
-Summary:	Qt GUI toolkit
-Group:		Development/KDE and Qt
-License:	LGPLv2 with exceptions or GPLv3 with exceptions and GFDL
-URL:		http://www.qt.io
+Patch1007:	0008-Unset-mouseGrabberPopup-if-it-s-removed-from-childre.patch
 BuildRequires:	qmake5 = %{version}
 BuildRequires:	pkgconfig(Qt5Gui) = %{version}
 BuildRequires:	pkgconfig(Qt5Quick) = %{version}
@@ -57,8 +58,8 @@ Qt Quick Controls.
 
 #------------------------------------------------------------------------------
 %package examples
-Summary: Examples for %{name}
-Group: Development/KDE and Qt
+Summary:	Examples for %{name}
+Group:		Development/KDE and Qt
 
 %description examples
 Examples for %{name}.
@@ -68,10 +69,10 @@ Examples for %{name}.
 
 #------------------------------------------------------------------------------
 %package -n %{devname}
-Summary: Development files for %{name}
-Group: Development/KDE and Qt
-Requires: %{name} = %{EVRD}
-Obsoletes: %{mklibname -d Qt5LabTemplates} < %{EVRD}
+Summary:	Development files for %{name}
+Group:		Development/KDE and Qt
+Requires:	%{name} = %{EVRD}
+Obsoletes:	%{mklibname -d Qt5LabTemplates} < %{EVRD}
 
 %description -n %{devname}
 Development files for %{name}.
@@ -94,7 +95,7 @@ Development files for %{name}.
 #------------------------------------------------------------------------------
 
 %prep
-%autosetup -n %qttarballdir -p1
+%autosetup -n %{qttarballdir} -p1
 %{_qt5_prefix}/bin/syncqt.pl -version %{version}
 
 %build
