@@ -16,13 +16,14 @@ Release:	0.%{beta}.1
 %define qttarballdir qtquickcontrols2-everywhere-src-%{version}-%{beta}
 Source0:	http://download.qt.io/development_releases/qt/%(echo %{version}|cut -d. -f1-2)/%{version}-%{beta}/submodules/%{qttarballdir}.tar.xz
 %else
-Release:	2
+Release:	3
 %define qttarballdir qtquickcontrols2-everywhere-src-5.15.2
 Source0:	http://download.qt.io/official_releases/qt/%(echo %{version}|cut -d. -f1-2)/5.15.2/submodules/%{qttarballdir}.tar.xz
 %endif
 Source100:	%{name}.rpmlintrc
 Patch0:		qtquickcontrols2-beta3-compile.patch
-# From KDE
+
+# From KDE https://invent.kde.org/qt/qt/qtquickcontrols2 -b kde/5.15
 Patch1000:	0001-Bump-version.patch
 Patch1002:	0003-Doc-fix-SplitView-s-inheritance.patch
 Patch1003:	0004-Fix-QQuickHeaderView-models-to-pass-model-tester.patch
@@ -30,6 +31,10 @@ Patch1004:	0005-Doc-fix-Qt-Labs-Platform-Menu-icon-documentation.patch
 Patch1005:	0006-Doc-remove-all-instances-of-qmlpropertygroup.patch
 Patch1006:	0007-QmlDesigner-Remove-duplicate-of-repeat.patch
 Patch1007:	0008-Unset-mouseGrabberPopup-if-it-s-removed-from-childre.patch
+Patch1008:	0009-Ensure-we-don-t-crash-when-changing-sizes-after-clea.patch
+Patch1009:	0010-QQuickAction-don-t-grab-the-same-shortcut-multiple-t.patch
+Patch1010:	0011-QQuickAbstractButton-fix-crash-on-destruction.patch
+
 BuildRequires:	qmake5 = %{version}
 BuildRequires:	pkgconfig(Qt5Gui) = %{version}
 BuildRequires:	pkgconfig(Qt5Quick) = %{version}
