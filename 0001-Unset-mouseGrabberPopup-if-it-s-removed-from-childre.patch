@@ -1,7 +1,7 @@
-From be66bf9a5618c745d2a6ee2262967af6307b3b07 Mon Sep 17 00:00:00 2001
+From ee9b677adfb21d8bf71f4a537a553f9b656ba942 Mon Sep 17 00:00:00 2001
 From: David Redondo <qt@david-redondo.de>
 Date: Mon, 19 Jul 2021 10:06:17 +0200
-Subject: [PATCH] Unset mouseGrabberPopup if it's removed from children
+Subject: [PATCH 1/4] Unset mouseGrabberPopup if it's removed from children
 
 The mouseGrabberPopup is supposed to be unset in handleRelease, however
 when the exit transition of the mouseGrabberPopup (that closed itself on
@@ -131,22 +131,21 @@ index 000000000..9e4598b9f
 +    }
 +}
 diff --git a/tests/auto/qquickpopup/tst_qquickpopup.cpp b/tests/auto/qquickpopup/tst_qquickpopup.cpp
-index 41955d7d0..38936620d 100644
+index ede3640c2..f1840946b 100644
 --- a/tests/auto/qquickpopup/tst_qquickpopup.cpp
 +++ b/tests/auto/qquickpopup/tst_qquickpopup.cpp
-@@ -96,6 +96,7 @@ private slots:
-     void tabFence();
+@@ -97,6 +97,7 @@ private slots:
      void invisibleToolTipOpen();
      void centerInOverlayWithinStackViewItem();
+     void destroyDuringExitTransition();
 +    void releaseAfterExitTransition();
  };
  
  void tst_QQuickPopup::initTestCase()
-@@ -1429,6 +1430,34 @@ void tst_QQuickPopup::centerInOverlayWithinStackViewItem()
-     // Shouldn't crash on exit.
+@@ -1459,6 +1460,34 @@ void tst_QQuickPopup::destroyDuringExitTransition()
+     QVERIFY(!button->isDown());
  }
  
-+
 +void tst_QQuickPopup::releaseAfterExitTransition()
 +{
 +    QQuickApplicationHelper helper(this, "releaseAfterExitTransition.qml");
@@ -174,9 +173,10 @@ index 41955d7d0..38936620d 100644
 +    QTRY_VERIFY(!popup->isOpened());
 +}
 +
++
  QTEST_QUICKCONTROLS_MAIN(tst_QQuickPopup)
  
  #include "tst_qquickpopup.moc"
 -- 
-2.33.0
+2.35.1
 
