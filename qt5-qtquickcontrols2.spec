@@ -10,14 +10,14 @@ Name:		qt5-qtquickcontrols2
 Group:		Development/KDE and Qt
 License:	LGPLv2 with exceptions or GPLv3 with exceptions and GFDL
 URL:		http://www.qt.io
-Version:	5.15.3
+Version:	5.15.4
 %if "%{beta}" != ""
 Release:	0.%{beta}.1
 %define qttarballdir qtquickcontrols2-everywhere-src-%{version}-%{beta}
 Source0:	http://download.qt.io/development_releases/qt/%(echo %{version}|cut -d. -f1-2)/%{version}-%{beta}/submodules/%{qttarballdir}.tar.xz
 %else
-Release:	4
-%define qttarballdir qtquickcontrols2-everywhere-opensource-src-5.15.3
+Release:	1
+%define qttarballdir qtquickcontrols2-everywhere-opensource-src-5.15.4
 Source0:	http://download.qt.io/official_releases/qt/%(echo %{version}|cut -d. -f1-2)/%{version}/submodules/%{qttarballdir}.tar.xz
 %endif
 Source100:	%{name}.rpmlintrc
