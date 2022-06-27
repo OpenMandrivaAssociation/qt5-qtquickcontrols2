@@ -1,7 +1,7 @@
-From cb0b21e52d2562e3dc46b1e36f248308de3fb204 Mon Sep 17 00:00:00 2001
+From d652727e3564d3a5f21788d9f75f903efbd4840c Mon Sep 17 00:00:00 2001
 From: Aleix Pol <aleixpol@kde.org>
 Date: Tue, 4 Jan 2022 16:34:16 +0100
-Subject: [PATCH 2/4] Ensure we don't crash when changing sizes after cleanup
+Subject: [PATCH 2/5] Ensure we don't crash when changing sizes after cleanup
 
 This addresses the problems I've seen during destruction. Only
 encountered it when using complex layouts on a DialogButtonBox.

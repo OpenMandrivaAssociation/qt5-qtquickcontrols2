@@ -1,7 +1,7 @@
-From 0d3d39e821ea7634c174a29910c18d7101bce6f7 Mon Sep 17 00:00:00 2001
+From 38dbeb8f5aa346f490003c75d9fa6e4b817f5bc8 Mon Sep 17 00:00:00 2001
 From: Ulf Hermann <ulf.hermann@qt.io>
 Date: Tue, 11 Jan 2022 12:42:47 +0100
-Subject: [PATCH 4/4] QQuickAbstractButton: fix crash on destruction
+Subject: [PATCH 4/5] QQuickAbstractButton: fix crash on destruction
 
 If we listen for size changes we also need to remove the object listened
 to when it's deleted.

@@ -10,14 +10,14 @@ Name:		qt5-qtquickcontrols2
 Group:		Development/KDE and Qt
 License:	LGPLv2 with exceptions or GPLv3 with exceptions and GFDL
 URL:		http://www.qt.io
-Version:	5.15.4
+Version:	5.15.5
 %if "%{beta}" != ""
 Release:	0.%{beta}.1
 %define qttarballdir qtquickcontrols2-everywhere-src-%{version}-%{beta}
 Source0:	http://download.qt.io/development_releases/qt/%(echo %{version}|cut -d. -f1-2)/%{version}-%{beta}/submodules/%{qttarballdir}.tar.xz
 %else
 Release:	1
-%define qttarballdir qtquickcontrols2-everywhere-opensource-src-5.15.4
+%define qttarballdir qtquickcontrols2-everywhere-opensource-src-%{version}
 Source0:	http://download.qt.io/official_releases/qt/%(echo %{version}|cut -d. -f1-2)/%{version}/submodules/%{qttarballdir}.tar.xz
 %endif
 Source100:	%{name}.rpmlintrc
@@ -28,6 +28,7 @@ Patch1000:	0001-Unset-mouseGrabberPopup-if-it-s-removed-from-childre.patch
 Patch1001:	0002-Ensure-we-don-t-crash-when-changing-sizes-after-clea.patch
 Patch1002:	0003-QQuickAction-don-t-grab-the-same-shortcut-multiple-t.patch
 Patch1003:	0004-QQuickAbstractButton-fix-crash-on-destruction.patch
+Patch1004:	0005-Revert-Allow-creation-of-custom-QQuickPopupItem-deri.patch
 
 BuildRequires:	qmake5 = %{version}
 BuildRequires:	pkgconfig(Qt5Gui) = %{version}
