@@ -16,7 +16,7 @@ Release:	0.%{beta}.1
 %define qttarballdir qtquickcontrols2-everywhere-src-%{version}-%{beta}
 Source0:	http://download.qt.io/development_releases/qt/%(echo %{version}|cut -d. -f1-2)/%{version}-%{beta}/submodules/%{qttarballdir}.tar.xz
 %else
-Release:	1
+Release:	2
 %define qttarballdir qtquickcontrols2-everywhere-opensource-src-%{version}
 Source0:	http://download.qt.io/official_releases/qt/%(echo %{version}|cut -d. -f1-2)/%{version}/submodules/%{qttarballdir}.tar.xz
 %endif
@@ -29,6 +29,7 @@ Patch1001:	0002-Ensure-we-don-t-crash-when-changing-sizes-after-clea.patch
 Patch1002:	0003-QQuickAction-don-t-grab-the-same-shortcut-multiple-t.patch
 Patch1003:	0004-QQuickAbstractButton-fix-crash-on-destruction.patch
 Patch1004:	0005-Revert-Allow-creation-of-custom-QQuickPopupItem-deri.patch
+Patch1005:	0006-Fix-scroll-bars-not-showing-up-when-binding-to-stand.patch
 
 BuildRequires:	qmake5 = %{version}
 BuildRequires:	pkgconfig(Qt5Gui) = %{version}
