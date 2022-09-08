@@ -1,7 +1,7 @@
 From 59cc1cc5b3719713598a1f426d82a9d895b5dccb Mon Sep 17 00:00:00 2001
 From: Albert Astals Cid <aacid@kde.org>
 Date: Fri, 17 Jun 2022 15:24:13 +0200
-Subject: [PATCH 5/5] Revert "Allow creation of custom QQuickPopupItem-derived
+Subject: [PATCH 5/6] Revert "Allow creation of custom QQuickPopupItem-derived
  types"
 
 This reverts commit 6b8a9673.
@@ -439,5 +439,5 @@ index ba09591bf..fa6929f92 100644
      $$PWD/qquickpopuppositioner_p_p.h \
      $$PWD/qquickpresshandler_p_p.h \
 -- 
-2.36.1
+2.37.2
 

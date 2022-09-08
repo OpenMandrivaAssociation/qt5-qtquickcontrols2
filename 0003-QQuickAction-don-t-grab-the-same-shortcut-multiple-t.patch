@@ -1,4 +1,4 @@
-From 5ac8f83ed1d34712d11a6b75a5bb1f877b24706a Mon Sep 17 00:00:00 2001
+From aeadc693cf323d61beb6e1d56121e6aabd013902 Mon Sep 17 00:00:00 2001
 From: Oliver Eftevaag <oliver.eftevaag@qt.io>
 Date: Wed, 19 Jan 2022 22:09:56 +0100
 Subject: [PATCH 3/5] QQuickAction: don't grab the same shortcut multiple times
@@ -45,5 +45,5 @@ index 2041e7741..8610cdfae 100644
  
      Qt::ShortcutContext context = Qt::WindowShortcut; // TODO
 -- 
-2.36.1
+2.37.2
 
