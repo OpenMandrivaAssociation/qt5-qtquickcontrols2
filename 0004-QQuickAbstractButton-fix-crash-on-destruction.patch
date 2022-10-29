@@ -1,4 +1,4 @@
-From c45351b5f6ddafcd540506c0ccb403daf449f8e7 Mon Sep 17 00:00:00 2001
+From 1bd1ceae8b8340f9d0e06b55a301c4642324d64a Mon Sep 17 00:00:00 2001
 From: Ulf Hermann <ulf.hermann@qt.io>
 Date: Tue, 11 Jan 2022 12:42:47 +0100
 Subject: [PATCH 4/5] QQuickAbstractButton: fix crash on destruction
@@ -85,5 +85,5 @@ index b3fab41ca..10b6baa02 100644
 +    }
  }
 -- 
-2.37.2
+2.38.1
 
