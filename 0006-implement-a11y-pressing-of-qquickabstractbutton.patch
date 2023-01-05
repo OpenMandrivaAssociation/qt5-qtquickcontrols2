@@ -1,7 +1,7 @@
-From 5465566a4ad9f6f9758bed304153f0c7fec3437b Mon Sep 17 00:00:00 2001
+From 8fba89821b1978468863a1d23a6146441960c502 Mon Sep 17 00:00:00 2001
 From: Harald Sitter <sitter@kde.org>
 Date: Wed, 2 Nov 2022 12:39:11 +0100
-Subject: [PATCH 6/6] implement a11y pressing of qquickabstractbutton
+Subject: [PATCH 6/7] implement a11y pressing of qquickabstractbutton
 MIME-Version: 1.0
 Content-Type: text/plain; charset=UTF-8
 Content-Transfer-Encoding: 8bit

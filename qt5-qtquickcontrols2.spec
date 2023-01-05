@@ -10,13 +10,13 @@ Name:		qt5-qtquickcontrols2
 Group:		Development/KDE and Qt
 License:	LGPLv2 with exceptions or GPLv3 with exceptions and GFDL
 URL:		http://www.qt.io
-Version:	5.15.7
+Version:	5.15.8
 %if "%{beta}" != ""
 Release:	0.%{beta}.1
 %define qttarballdir qtquickcontrols2-everywhere-src-%{version}-%{beta}
 Source0:	http://download.qt.io/development_releases/qt/%(echo %{version}|cut -d. -f1-2)/%{version}-%{beta}/submodules/%{qttarballdir}.tar.xz
 %else
-Release:	2
+Release:	1
 %define qttarballdir qtquickcontrols2-everywhere-opensource-src-%{version}
 Source0:	http://download.qt.io/official_releases/qt/%(echo %{version}|cut -d. -f1-2)/%{version}/submodules/%{qttarballdir}.tar.xz
 %endif
@@ -30,6 +30,7 @@ Patch1002:	0003-QQuickAction-don-t-grab-the-same-shortcut-multiple-t.patch
 Patch1003:	0004-QQuickAbstractButton-fix-crash-on-destruction.patch
 Patch1004:	0005-Fix-scroll-bars-not-showing-up-when-binding-to-stand.patch
 Patch1005:	0006-implement-a11y-pressing-of-qquickabstractbutton.patch
+Patch1006:	0007-Fix-the-popup-position-of-a-Menu.patch
 
 BuildRequires:	qmake5 = %{version}
 BuildRequires:	pkgconfig(Qt5Gui) = %{version}

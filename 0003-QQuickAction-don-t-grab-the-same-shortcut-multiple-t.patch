@@ -1,7 +1,7 @@
-From 034a6e6f046d6ce97395ecad1b31b6a920f980d4 Mon Sep 17 00:00:00 2001
+From 5ccf04cc3cbfb8539b71e8f1a0717ee7fa798ee6 Mon Sep 17 00:00:00 2001
 From: Oliver Eftevaag <oliver.eftevaag@qt.io>
 Date: Wed, 19 Jan 2022 22:09:56 +0100
-Subject: [PATCH 3/5] QQuickAction: don't grab the same shortcut multiple times
+Subject: [PATCH 3/7] QQuickAction: don't grab the same shortcut multiple times
 
 If the entry for the QQuickItem that the QQuickAction is set on has
 already grabbed the shortcut, then m_shortcutId is no longer 0 and we

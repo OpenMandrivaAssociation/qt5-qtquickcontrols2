@@ -1,7 +1,7 @@
-From 77b25c91dfcc5b4320b25c30ad8955c41b7d2fdb Mon Sep 17 00:00:00 2001
+From cee73a3e19048ab056edc857bae28e9f8d7d6c4b Mon Sep 17 00:00:00 2001
 From: David Redondo <qt@david-redondo.de>
 Date: Mon, 19 Jul 2021 10:06:17 +0200
-Subject: [PATCH 1/5] Unset mouseGrabberPopup if it's removed from children
+Subject: [PATCH 1/7] Unset mouseGrabberPopup if it's removed from children
 
 The mouseGrabberPopup is supposed to be unset in handleRelease, however
 when the exit transition of the mouseGrabberPopup (that closed itself on
@@ -30,7 +30,7 @@ Reviewed-by: Mitch Curtis <mitch.curtis@qt.io>
  create mode 100644 tests/auto/qquickpopup/data/releaseAfterExitTransition.qml
 
 diff --git a/src/quicktemplates2/qquickoverlay.cpp b/src/quicktemplates2/qquickoverlay.cpp
-index b8d417f29..c8cd142ae 100644
+index 91bd59184..0ce518f84 100644
 --- a/src/quicktemplates2/qquickoverlay.cpp
 +++ b/src/quicktemplates2/qquickoverlay.cpp
 @@ -399,8 +399,11 @@ void QQuickOverlay::itemChange(ItemChange change, const ItemChangeData &data)
@@ -131,10 +131,10 @@ index 000000000..9e4598b9f
 +    }
 +}
 diff --git a/tests/auto/qquickpopup/tst_qquickpopup.cpp b/tests/auto/qquickpopup/tst_qquickpopup.cpp
-index ede3640c2..f1840946b 100644
+index 54952d128..3d50e2dd4 100644
 --- a/tests/auto/qquickpopup/tst_qquickpopup.cpp
 +++ b/tests/auto/qquickpopup/tst_qquickpopup.cpp
-@@ -97,6 +97,7 @@ private slots:
+@@ -100,6 +100,7 @@ private slots:
      void invisibleToolTipOpen();
      void centerInOverlayWithinStackViewItem();
      void destroyDuringExitTransition();
@@ -142,7 +142,7 @@ index ede3640c2..f1840946b 100644
  };
  
  void tst_QQuickPopup::initTestCase()
-@@ -1459,6 +1460,34 @@ void tst_QQuickPopup::destroyDuringExitTransition()
+@@ -1575,6 +1576,34 @@ void tst_QQuickPopup::destroyDuringExitTransition()
      QVERIFY(!button->isDown());
  }
  
