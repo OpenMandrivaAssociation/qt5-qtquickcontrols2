@@ -1,7 +1,7 @@
-From 7651ffc8762aa5eca5c7d519b91cd8a0d4e3408a Mon Sep 17 00:00:00 2001
+From 7145c2589193b0ca0eafbb35085bc5cb5613b055 Mon Sep 17 00:00:00 2001
 From: Mitch Curtis <mitch.curtis@qt.io>
 Date: Mon, 18 Jul 2022 15:21:49 +0800
-Subject: [PATCH 5/7] Fix scroll bars not showing up when binding to standalone
+Subject: [PATCH 3/5] Fix scroll bars not showing up when binding to standalone
  contentItem
 
 908aa77d16e00f2bccc0ddae0f8b61955c56a6a1 hid old scroll bars, but
@@ -175,5 +175,5 @@ index 0e8b08352..cd4931184 100644
 +    }
  }
 -- 
-2.38.1
+2.40.0.rc2
 

@@ -1,7 +1,7 @@
-From 8fba89821b1978468863a1d23a6146441960c502 Mon Sep 17 00:00:00 2001
+From 29c60b84e92c83c28211bc349eb00e6c93eeed80 Mon Sep 17 00:00:00 2001
 From: Harald Sitter <sitter@kde.org>
 Date: Wed, 2 Nov 2022 12:39:11 +0100
-Subject: [PATCH 6/7] implement a11y pressing of qquickabstractbutton
+Subject: [PATCH 4/5] implement a11y pressing of qquickabstractbutton
 MIME-Version: 1.0
 Content-Type: text/plain; charset=UTF-8
 Content-Transfer-Encoding: 8bit
@@ -22,10 +22,10 @@ qtdeclarative)
  2 files changed, 7 insertions(+)
 
 diff --git a/src/quicktemplates2/qquickabstractbutton.cpp b/src/quicktemplates2/qquickabstractbutton.cpp
-index 1df0c706d..b81fbea0b 100644
+index 20cf59c1a..43af47a94 100644
 --- a/src/quicktemplates2/qquickabstractbutton.cpp
 +++ b/src/quicktemplates2/qquickabstractbutton.cpp
-@@ -1187,6 +1187,12 @@ QAccessible::Role QQuickAbstractButton::accessibleRole() const
+@@ -1201,6 +1201,12 @@ QAccessible::Role QQuickAbstractButton::accessibleRole() const
      }
      return QAccessible::Button;
  }
@@ -51,5 +51,5 @@ index 0fa48980e..ab66220d0 100644
  
  private:
 -- 
-2.38.1
+2.40.0.rc2
 
