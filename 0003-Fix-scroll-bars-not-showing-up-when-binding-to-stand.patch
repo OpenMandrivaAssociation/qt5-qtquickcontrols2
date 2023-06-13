@@ -1,7 +1,7 @@
-From 7145c2589193b0ca0eafbb35085bc5cb5613b055 Mon Sep 17 00:00:00 2001
+From 2b02c893df78e4b435d56432193e8301fa535d80 Mon Sep 17 00:00:00 2001
 From: Mitch Curtis <mitch.curtis@qt.io>
 Date: Mon, 18 Jul 2022 15:21:49 +0800
-Subject: [PATCH 3/5] Fix scroll bars not showing up when binding to standalone
+Subject: [PATCH 3/6] Fix scroll bars not showing up when binding to standalone
  contentItem
 
 908aa77d16e00f2bccc0ddae0f8b61955c56a6a1 hid old scroll bars, but
@@ -30,10 +30,10 @@ Reviewed-by: Nate Graham
  4 files changed, 89 insertions(+)
 
 diff --git a/src/quicktemplates2/qquickcontrol.cpp b/src/quicktemplates2/qquickcontrol.cpp
-index bbbd0e622..1f4b47343 100644
+index 409fb582c..da95086e4 100644
 --- a/src/quicktemplates2/qquickcontrol.cpp
 +++ b/src/quicktemplates2/qquickcontrol.cpp
-@@ -845,6 +845,13 @@ void QQuickControlPrivate::executeBackground(bool complete)
+@@ -846,6 +846,13 @@ void QQuickControlPrivate::executeBackground(bool complete)
          quickCompleteDeferred(q, backgroundName(), background);
  }
  
@@ -47,7 +47,7 @@ index bbbd0e622..1f4b47343 100644
  void QQuickControlPrivate::hideOldItem(QQuickItem *item)
  {
      if (!item)
-@@ -863,6 +870,29 @@ void QQuickControlPrivate::hideOldItem(QQuickItem *item)
+@@ -864,6 +871,29 @@ void QQuickControlPrivate::hideOldItem(QQuickItem *item)
  #endif
  }
  
@@ -175,5 +175,5 @@ index 0e8b08352..cd4931184 100644
 +    }
  }
 -- 
-2.40.0.rc2
+2.41.0.rc2
 
