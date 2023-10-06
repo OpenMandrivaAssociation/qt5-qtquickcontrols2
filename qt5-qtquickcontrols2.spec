@@ -10,7 +10,7 @@ Name:		qt5-qtquickcontrols2
 Group:		Development/KDE and Qt
 License:	LGPLv2 with exceptions or GPLv3 with exceptions and GFDL
 URL:		http://www.qt.io
-Version:	5.15.10
+Version:	5.15.11
 %if "%{beta}" != ""
 Release:	0.%{beta}.1
 %define qttarballdir qtquickcontrols2-everywhere-src-%{version}-%{beta}
@@ -26,10 +26,9 @@ Patch0:		qtquickcontrols2-beta3-compile.patch
 # From KDE https://invent.kde.org/qt/qt/qtquickcontrols2 -b kde/5.15
 Patch1001:	0001-Unset-mouseGrabberPopup-if-it-s-removed-from-childre.patch
 Patch1002:	0002-Ensure-we-don-t-crash-when-changing-sizes-after-clea.patch
-Patch1003:	0003-Fix-scroll-bars-not-showing-up-when-binding-to-stand.patch
-Patch1004:	0004-implement-a11y-pressing-of-qquickabstractbutton.patch
-Patch1005:	0005-Fix-the-popup-position-of-a-Menu.patch
-Patch1006:	0006-Accessibility-respect-value-in-attached-Accessible-i.patch
+Patch1003:	0003-implement-a11y-pressing-of-qquickabstractbutton.patch
+Patch1004:	0004-Fix-the-popup-position-of-a-Menu.patch
+Patch1005:	0005-Accessibility-respect-value-in-attached-Accessible-i.patch
 
 BuildRequires:	qmake5 = %{version}
 BuildRequires:	pkgconfig(Qt5Gui) = %{version}

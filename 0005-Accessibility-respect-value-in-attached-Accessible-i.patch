@@ -1,7 +1,7 @@
-From 0472a07a8f39587052216d85a7ed235c531eba2c Mon Sep 17 00:00:00 2001
+From a2d56960dd76c94a5115b5415be5ee174d377718 Mon Sep 17 00:00:00 2001
 From: Volker Hilsheimer <volker.hilsheimer@qt.io>
 Date: Tue, 18 Apr 2023 22:05:36 +0200
-Subject: [PATCH 6/6] Accessibility: respect value in attached Accessible in
+Subject: [PATCH 5/5] Accessibility: respect value in attached Accessible in
  controls
 MIME-Version: 1.0
 Content-Type: text/plain; charset=UTF-8
@@ -45,10 +45,10 @@ Reviewed-by: Jan Arve Sæther <jan-arve.saether@qt.io>
  7 files changed, 23 insertions(+), 5 deletions(-)
 
 diff --git a/src/quicktemplates2/qquickcontrol.cpp b/src/quicktemplates2/qquickcontrol.cpp
-index da95086e4..c4b05c13c 100644
+index a719efd34..768691dac 100644
 --- a/src/quicktemplates2/qquickcontrol.cpp
 +++ b/src/quicktemplates2/qquickcontrol.cpp
-@@ -2327,12 +2327,13 @@ QAccessible::Role QQuickControl::accessibleRole() const
+@@ -2334,12 +2334,13 @@ QAccessible::Role QQuickControl::accessibleRole() const
  
  void QQuickControl::accessibilityActiveChanged(bool active)
  {
@@ -163,5 +163,5 @@ index 8fa04bd3a..e83346cbd 100644
      accessibleAttached->set_passwordEdit((m_echoMode == QQuickTextField::Password || m_echoMode == QQuickTextField::PasswordEchoOnEdit) ? true : false);
      accessibleAttached->setDescription(placeholder);
 -- 
-2.41.0.rc2
+2.42.0
 

@@ -1,7 +1,7 @@
-From a50d27c87d7f8c9e710933b2f808ea132205d9e6 Mon Sep 17 00:00:00 2001
+From 996ab6f4e9e5f0ac651a9fe69722a707e57d8105 Mon Sep 17 00:00:00 2001
 From: Aleix Pol <aleixpol@kde.org>
 Date: Tue, 4 Jan 2022 16:34:16 +0100
-Subject: [PATCH 2/6] Ensure we don't crash when changing sizes after cleanup
+Subject: [PATCH 2/5] Ensure we don't crash when changing sizes after cleanup
 
 This addresses the problems I've seen during destruction. Only
 encountered it when using complex layouts on a DialogButtonBox.
@@ -79,5 +79,5 @@ index e6db14eb5..6197d1547 100644
      qreal maxHeight = 0;
      for (int i = 0; i < count; ++i) {
 -- 
-2.41.0.rc2
+2.42.0
 
