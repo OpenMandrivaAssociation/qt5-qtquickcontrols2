@@ -1,4 +1,4 @@
-From 996ab6f4e9e5f0ac651a9fe69722a707e57d8105 Mon Sep 17 00:00:00 2001
+From 18b0b7464457846f5fae876bbb84841d66ac346e Mon Sep 17 00:00:00 2001
 From: Aleix Pol <aleixpol@kde.org>
 Date: Tue, 4 Jan 2022 16:34:16 +0100
 Subject: [PATCH 2/5] Ensure we don't crash when changing sizes after cleanup
@@ -79,5 +79,5 @@ index e6db14eb5..6197d1547 100644
      qreal maxHeight = 0;
      for (int i = 0; i < count; ++i) {
 -- 
-2.42.0
+2.43.0
 

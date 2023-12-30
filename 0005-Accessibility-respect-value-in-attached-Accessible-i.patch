@@ -1,4 +1,4 @@
-From a2d56960dd76c94a5115b5415be5ee174d377718 Mon Sep 17 00:00:00 2001
+From 134ca5dbef9d137a9c46faa79b0225bc650d9283 Mon Sep 17 00:00:00 2001
 From: Volker Hilsheimer <volker.hilsheimer@qt.io>
 Date: Tue, 18 Apr 2023 22:05:36 +0200
 Subject: [PATCH 5/5] Accessibility: respect value in attached Accessible in
@@ -163,5 +163,5 @@ index 8fa04bd3a..e83346cbd 100644
      accessibleAttached->set_passwordEdit((m_echoMode == QQuickTextField::Password || m_echoMode == QQuickTextField::PasswordEchoOnEdit) ? true : false);
      accessibleAttached->setDescription(placeholder);
 -- 
-2.42.0
+2.43.0
 
