@@ -1,4 +1,4 @@
-From e92f65d173e5284aea30dc2658abcce0f1027de9 Mon Sep 17 00:00:00 2001
+From 1890a5384d579fc225e95b4e9407014367f15313 Mon Sep 17 00:00:00 2001
 From: Harald Sitter <sitter@kde.org>
 Date: Wed, 2 Nov 2022 12:39:11 +0100
 Subject: [PATCH 3/5] implement a11y pressing of qquickabstractbutton
@@ -51,5 +51,5 @@ index 0fa48980e..ab66220d0 100644
  
  private:
 -- 
-2.45.1
+2.46.0
 
