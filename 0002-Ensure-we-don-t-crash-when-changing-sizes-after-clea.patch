@@ -1,4 +1,4 @@
-From 279adcf14adef9657474a8c1f177b6c5585abf60 Mon Sep 17 00:00:00 2001
+From 0b994f7057eb95cedf356a016b1d98911fc3f086 Mon Sep 17 00:00:00 2001
 From: Aleix Pol <aleixpol@kde.org>
 Date: Tue, 4 Jan 2022 16:34:16 +0100
 Subject: [PATCH 2/5] Ensure we don't crash when changing sizes after cleanup
@@ -46,7 +46,7 @@ index f38c2b09c..6eed2a024 100644
  
      contentHeight = implicitContentHeight;
 diff --git a/src/quicktemplates2/qquickdialogbuttonbox.cpp b/src/quicktemplates2/qquickdialogbuttonbox.cpp
-index e6db14eb5..6197d1547 100644
+index e33c5c934..9afabd18a 100644
 --- a/src/quicktemplates2/qquickdialogbuttonbox.cpp
 +++ b/src/quicktemplates2/qquickdialogbuttonbox.cpp
 @@ -237,7 +237,7 @@ static QRectF alignedRect(Qt::LayoutDirection direction, Qt::Alignment alignment
@@ -79,5 +79,5 @@ index e6db14eb5..6197d1547 100644
      qreal maxHeight = 0;
      for (int i = 0; i < count; ++i) {
 -- 
-2.46.0
+2.51.2
 
