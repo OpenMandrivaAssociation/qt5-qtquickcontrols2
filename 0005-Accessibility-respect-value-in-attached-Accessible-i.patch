@@ -1,4 +1,4 @@
-From e464888c53a641ee44a34ff2350cfb156c8ed59f Mon Sep 17 00:00:00 2001
+From 5b808e0995d018c6de9f075d4a61f58d3641c11b Mon Sep 17 00:00:00 2001
 From: Volker Hilsheimer <volker.hilsheimer@qt.io>
 Date: Tue, 18 Apr 2023 22:05:36 +0200
 Subject: [PATCH 5/5] Accessibility: respect value in attached Accessible in
@@ -51,5 +51,5 @@ index 3f8691e2c..6b1ca32b3 100644
  #include <QtQuick/private/qquickitem_p.h>
  #include <QtQuick/private/qquickaccessibleattached_p.h>
 -- 
-2.51.2
+2.53.0
 

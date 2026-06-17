@@ -1,4 +1,4 @@
-From 4d026ba17dac2c46a19073451570d93f1e58c52e Mon Sep 17 00:00:00 2001
+From bc4da9d52a0c9bfbedc524ea45643efe4556c5b1 Mon Sep 17 00:00:00 2001
 From: Inho Lee <inho.lee@qt.io>
 Date: Mon, 22 Aug 2022 21:05:00 +0800
 Subject: [PATCH 4/5] Fix the popup position of a Menu
@@ -41,5 +41,5 @@ index e5fe734f7..e36922775 100644
      const QWidgetPlatformMenuItem *widgetItem = qobject_cast<const QWidgetPlatformMenuItem *>(item);
      m_menu->popup(targetPos, widgetItem ? widgetItem->action() : nullptr);
 -- 
-2.51.2
+2.53.0
 
